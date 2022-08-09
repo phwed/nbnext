@@ -29,6 +29,8 @@ export const setUserMiddleware = (user) => async (dispatch) => {
     displayName: user.displayName,
     email: user.email,
     photoURL: user.photoURL,
+    role:'fred',
+    postion:'doctor'
   })
     .then(async (res) => {
       const uid = user.uid;
@@ -36,7 +38,7 @@ export const setUserMiddleware = (user) => async (dispatch) => {
 
       const q = query(usernamesRef, where("uid", "==", uid));
 
-      console.log(uid);
+      console.log(uid);qem
       await getDocs(q)
         .then((querySnapshot) => {
           // check if querySnapshot is not empty

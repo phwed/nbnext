@@ -64,6 +64,7 @@ function SignInButton() {
     try {
       signInWithPopup(auth, provider)
         .then((result) => {
+          console.log(result.user)
           dispatch(setUserMiddleware(result.user));
         })
         .catch((error) => {
